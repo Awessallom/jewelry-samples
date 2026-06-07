@@ -29,7 +29,7 @@ app.log
 # Environment
 .env
 
-# Project specific
+# Project specificdocker-compose up --build
 test.db
 samples.db
 "@ | Out-File -FilePath .gitignore -Encoding utf8

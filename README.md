@@ -41,6 +41,20 @@ uvicorn app.main:app --reload
 
 Документация API: http://localhost:8000/docs
 
+### 5. Запуск Через docker-compose
+
+#### Клонировать репозиторий
+git clone https://github.com/ВАШ-USERNAME/jewelry-samples.git
+
+#### Перейти в папку
+cd jewelry-samples
+
+#### Запустить всё одной командой
+docker-compose up --build
+
+#### API будет доступно по адресу:
+# http://localhost:8000/docs
+
 ## Эндпоинты API
 
 | Метод	| URL	| Описание |
