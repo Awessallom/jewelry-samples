@@ -6,10 +6,11 @@
 import requests
 import random
 import time
+import os
 from datetime import datetime
 
-# Конфигурация
-API_URL = "http://localhost:8000/samples"
+# Конфигурация — читаем переменную окружения, если она есть
+API_URL = os.getenv("API_URL", "http://localhost:8000/samples")
 OPERATORS = ["John First", "Michael Second", "Andrew Third", "Nick Fourth", "Carlos Fifth"]
 SAMPLE_PREFIXES = ["AU", "AG", "PT", "PD", "RH"]  # Золото, Серебро, Платина, Палладий, Родий
 
