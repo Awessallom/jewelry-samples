@@ -94,6 +94,7 @@ pytest tests/test_api.py -v
 ## Структура проекта
 
 jewelry_samples/
+
 ├── app/
 │   ├── __init__.py
 │   ├── main.py          # FastAPI приложение

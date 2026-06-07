@@ -1,17 +1,14 @@
+# Создаём файл с ANSI/UTF-8 кодировкой
+@"
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
-.Python
 venv/
 env/
-ENV/
 .venv
-pip-log.txt
-pip-delete-this-directory.txt
 
-# Базы данных
+# Database
 *.db
 *.sqlite
 *.sqlite3
@@ -19,26 +16,20 @@ pip-delete-this-directory.txt
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
 .DS_Store
 
-# Тесты
+# Testing
 .pytest_cache/
-.coverage
-htmlcov/
-.tox/
+.coverage/
 
-# Логи
+# Logs
 *.log
+app.log
 
-# Переменные окружения
+# Environment
 .env
 
-# Проект-specific
+# Project specific
 test.db
 samples.db
-
-# Файлы отчётов
-*.pyc
+"@ | Out-File -FilePath .gitignore -Encoding utf8
