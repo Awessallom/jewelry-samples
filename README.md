@@ -24,7 +24,7 @@ cd jewelry_samples
 bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# или
+#### или
 venv\Scripts\activate  # Windows
 
 ### 3. Установка зависимостей
@@ -53,7 +53,7 @@ cd jewelry-samples
 docker-compose up --build
 
 #### API будет доступно по адресу:
-# http://localhost:8000/docs
+http://localhost:8000/docs
 
 ## Эндпоинты API
 
