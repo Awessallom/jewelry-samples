@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./samples.db:/app/samples.db
+    restart: unless-stopped
+
+  simulator:
+    build: .
+    command: python device_simulator.py
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api:8000/samples
+    restart: unless-stopped
