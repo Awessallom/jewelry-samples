@@ -51,36 +51,48 @@ uvicorn app.main:app --reload
 | PATCH	| /samples/{id}/status	| Изменение статуса пробы |
 | GET	| /reports/summary	| Сводный отчет |
 
-Примеры запросов
-Создание пробы
+## Примеры запросов
+
+### 1. Создание пробы
 
 bash
 curl -X POST http://localhost:8000/samples \
   -H "Content-Type: application/json" \
   -d '{"sample_code":"AU-001","weight":12.5,"operator":"John Doe"}'
-Получение списка проб
+
+### 2. Получение списка проб
+
 bash
 curl "http://localhost:8000/samples?skip=0&limit=10"
-Изменение статуса
+
+### 3. Изменение статуса
+
 bash
 curl -X PATCH http://localhost:8000/samples/1/status \
   -H "Content-Type: application/json" \
   -d '{"status":"approved"}'
-Получение отчета
+
+### 4. Получение отчета
+
 bash
 curl http://localhost:8000/reports/summary
-Запуск эмулятора оборудования
+
+### 5. Запуск эмулятора оборудования
+
 В отдельном терминале:
 
 bash
 python device_simulator.py
+
 Эмулятор создаст 20+ проб с интервалом 2 секунды.
 
-Запуск тестов
+### 6. Запуск тестов
+
 bash
 pytest tests/test_api.py -v
-Структура проекта
-text
+
+## Структура проекта
+
 jewelry_samples/
 ├── app/
 │   ├── __init__.py
@@ -95,20 +107,17 @@ jewelry_samples/
 ├── requirements.txt     # Зависимости
 ├── README.md           # Документация
 └── .gitignore          # Игнорируемые файлы
-Допустимые статусы
+
+### Допустимые статусы
+
 created - создана (по умолчанию)
-
 measured - измерена
-
 approved - одобрена
-
 rejected - отклонена
 
-Валидация данных
+### Валидация данных
+
 Код пробы не может быть пустым
-
 Оператор не может быть пустым
-
 Вес должен быть больше нуля
-
 Статус только из списка допустимых
